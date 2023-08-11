@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User Registration</title>
+    <link rel="stylesheet" type="text/css" href="register.css">
+</head>
+
+<body>
+    <h2>User Registration</h2>
+    <?php if (!empty($message)) { ?>
+    <p class="message">
+        <?php echo $message; ?>
+    </p>
+    <?php } ?>
+    <form method="POST" action="register.php">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <input type="submit" name="submit" value="Register">
+
+            <div class="forgot">
+                <a href="login.html">Already have an account?</a>
+            </div>
+            
+    </form>
+
+</body>
+
+</html>

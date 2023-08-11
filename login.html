@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .toggle-password {
+            position: relative;
+            top: -25px;
+            left: 93%;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .caps-lock-status {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form method="post" action="login.php">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <div class="input-field">
+            <label for="password">Password:</label>
+            <div class="password-container">
+                <input type="password" id="password" name="password" required>
+                <i class="fas fa-eye toggle-password" id="fa-eye" onclick="togglePasswordVisibility()"></i>
+            </div>
+            </div>
+
+            <div class="caps-lock-status" id="capsLockStatus"></div>
+
+            <div class="remember">
+                <input type="checkbox" id="formCheck" class="check">
+                <label for="formCheck"> Remember Me</label>
+            </div>
+
+            <input type="submit" name="submit" value="Login">
+
+            <div class="forgot">
+                <a href="#">Forgot password?</a>
+            </div>
+
+            <div class="noaccount">
+                <a href="register.html">Don't have an account?</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function togglePasswordVisibility() {
+            var passwordField = document.getElementById("password");
+            var toggleIcon = document.querySelector(".toggle-password");
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                toggleIcon.classList.remove("fa-eye");
+                toggleIcon.classList.add("fa-eye-slash");
+            } else {
+                passwordField.type = "password";
+                toggleIcon.classList.remove("fa-eye-slash");
+                toggleIcon.classList.add("fa-eye");
+            }
+        }
+
+    
+
+        document.getElementById("password").addEventListener("keyup", function (event) {
+            var capsLockOn = event.getModifierState && event.getModifierState('CapsLock');
+            var capsLockStatus = document.getElementById("capsLockStatus");
+
+            if (capsLockOn) {
+                capsLockStatus.textContent = "CAPS LOCK IS ON";
+            } else {
+                capsLockStatus.textContent = "";
+            }
+        });
+    </script>
+</body>
+
+</html>
