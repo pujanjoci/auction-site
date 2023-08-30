@@ -43,10 +43,9 @@ if ($result->num_rows > 0) {
 
 <head>
     <title>Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="user.css">
+    <link rel="stylesheet" type="text/css" href="staff.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-w5Z4jf4Gf6BJrRmcJyIOhwG8fg9ZbeixBr+9g2eOjOqsxgEMf8P+vnjaF/wmzSsbY+2LisZ8u+M6DlX3TCIS0A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-
 </head>
 
 <body>

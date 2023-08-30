@@ -1,16 +1,16 @@
  .talk {
-     position: absolute;
+     position: relative;
      font-size: 30px;
-     top: 8%;
+     top: 5%;
      left: 18%;
      font-family: 'Mali', cursive;
      font-size: 20px;
  }
 
  .para {
-     position: absolute;
+     position: relative;
      line-height: 25px;
-     top: 20%;
+     top: 2%;
      left: 18%;
      font-family: 'Neucha', cursive;
      width: 450px;
@@ -18,48 +18,11 @@
     padding: 2px;
  }
 
-.soc {
-    position: absolute;
-    font-size: 20px;
-    top: 50%;
-    left: 90%;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.socials {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    padding: 1px;
-    margin-top: 10px;
-}
-
-.socials a {
-    text-decoration: none;
-    color: #fff;
-    justify-content: center;
-    margin-bottom: 50px;
-}
-
-.socials a i {
-    font-size: 20px;
-    transition: color .4s ease;
-    color: #3a3a3a6c;
-}
-
-.socials a:hover i {
-    color: aqua;
-}
-
-
  .form {
      position: absolute;
      top: 25%;
-     right: 7%;
-     width: 35%;
+     right: 13%;
+     width: 30%;
      padding: 1%;
      background-color: #fff;
      border-radius: 5%;
@@ -126,6 +89,10 @@
      left: 40%;
  }
 
+    .form .inputbox input[type="submit"]:hover {
+        background: #00606ca1;
+        color: #fff;
+    }
  #description-counter {
      position: absolute;
      bottom: 0;

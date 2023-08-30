@@ -1,44 +1,41 @@
 <?php
-include('config.php');
+// Include the database connection from config.php
+require_once('config.php');
 
-// Attempt to establish a database connection
-$con = mysqli_connect($hostname, $username, $password, $database);
+// Check if the form is submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Sanitize user inputs
+    $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-// Check if the connection was successful
-if (!$con) {
-    die("Failed to connect to the database: " . mysqli_connect_error());
-}
+    // Check if the username or email already exists in the database
+    $query = "SELECT * FROM users WHERE username = ? OR email = ?";
+    $stmt = $con->prepare($query);
+    $stmt->bind_param("ss", $username, $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-$message = ""; // Initialize the message variable
-
-if (isset($_POST['submit'])) {
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    // Check if the username or email already exists
-    $checkExistingQuery = "SELECT * FROM users WHERE username = ? OR email = ?";
-    $stmt = mysqli_prepare($con, $checkExistingQuery);
-    mysqli_stmt_bind_param($stmt, "ss", $username, $email);
-    mysqli_stmt_execute($stmt);
-    $checkExistingResult = mysqli_stmt_get_result($stmt);
-
-    if (mysqli_num_rows($checkExistingResult) > 0) {
-        $message = "Username or email already exists. Please choose a different username or email.";
+    if ($result->num_rows > 0) {
+        // User or email already exists, show an alert and redirect to register.html
+        echo '<script>alert("Email or Username already exists");</script>';
+        echo '<script>window.location.href = "register.html";</script>';
     } else {
-        // Hash the password using MD5
-        $hashedPassword = md5($password);
-
-        // Insert the user into the database
+        // Insert the user values into the database
         $insertQuery = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
-        $stmt = mysqli_prepare($con, $insertQuery);
-        mysqli_stmt_bind_param($stmt, "sss", $username, $email, $hashedPassword);
-        mysqli_stmt_execute($stmt);
+        $insertStmt = $con->prepare($insertQuery);
+        $insertStmt->bind_param("sss", $username, $email, $password);
 
-        $message = "Registration successful! Please proceed to <a href='login.html'>login</a>.";
-
-        // Redirect to login.html after successful registration
-        header("Location: login.html");
-        exit;
+        if ($insertStmt->execute()) {
+            // Registration successful, redirect to login.html
+            echo '<script>window.location.href = "login.html";</script>';
+        } else {
+            // Error occurred while inserting, redirect to register.html
+            echo '<script>alert("An error occurred while registering.");</script>';
+            echo '<script>window.location.href = "register.html";</script>';
+        }
     }
+
+    // Close the statement
+    $stmt->close();
 }

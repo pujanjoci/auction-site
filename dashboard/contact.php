@@ -30,14 +30,8 @@ function checkUserRoleAndIncludeMenu($role)
 {
     // Check the user's role and include the appropriate menu file
     switch ($role) {
-        case "super":
-            include "super-mode/menu.php";
-            break;
         case "admin":
             include "admin/menu.php";
-            break;
-        case "manager":
-            include "manager/menu.php";
             break;
         case "staff":
             include "staff/menu.php";
@@ -103,9 +97,9 @@ if ($userId) {
         <h1>Discover the Ultimate Auction Experience!</h1>
     </div>
     <div class="para">
-        <p>Join us at the prestigious Grand Auction House, where extraordinary treasures await you. Step into a world of luxury, elegance, and excitement as we present an exclusive collection of rare artifacts, fine art, exquisite jewelry, vintage collectibles, and much more.
+        <p>Join us at the prestigious Rachit Auction House, where extraordinary treasures await you. Step into a world of luxury, elegance, and excitement as we present an exclusive collection of rare artifacts, fine art, exquisite jewelry, vintage collectibles, and much more.
 
-            At the Grand Auction House, we bring together discerning collectors, passionate enthusiasts, and connoisseurs from around the globe. Our curated auctions offer a remarkable opportunity to acquire unique and coveted pieces that embody history, craftsmanship, and artistic brilliance.
+            At the Rachit Auction House, we bring together discerning collectors, passionate enthusiasts, and connoisseurs from around the globe. Our curated auctions offer a remarkable opportunity to acquire unique and coveted pieces that embody history, craftsmanship, and artistic brilliance.
 
             Immerse yourself in the ambiance of anticipation as the auctioneer takes center stage, guiding you through the bidding process. Feel the thrill as bids escalate, rivaling the crescendo of applause. With every paddle raise, you enter into a captivating competition to own something truly exceptional.
 
@@ -113,20 +107,11 @@ if ($userId) {
 
             Whether you're a seasoned collector or a newcomer to the world of auctions, our knowledgeable staff is here to guide you through the journey. We believe that every auction experience should be accompanied by impeccable service, tailored advice, and personalized attention.
 
-            Join us at the Grand Auction House and embark on an exhilarating adventure filled with discovery, luxury, and the joy of acquiring extraordinary treasures. Don't miss your chance to become part of the legacy. Register today and elevate your collecting to new heights.
+            Join us at the Rachit Auction House and embark on an exhilarating adventure filled with discovery, luxury, and the joy of acquiring extraordinary treasures. Don't miss your chance to become part of the legacy. Register today and elevate your collecting to new heights.
 
-            The Grand Auction House - Where Extraordinary Finds Await!</p>
+            The Rachit Auction House - Where Extraordinary Finds Await!</p>
     </div>
 
-
-    <div class="soc">
-        <p>You can follow my socials.</p>
-        <ul class="socials">
-            <li><a href="https://www.facebook.com/PujanJoci/"><i class="fa fa-facebook"></a></i></li>
-            <li><a href="https://twitter.com/PujanJoshi3"><i class="fa fa-twitter"></a></i></li>
-            <li><a href="https://www.linkedin.com/in/pujan-joshi-b811071a1/"><i class="fa fa-linkedin-square"></a></i></li>
-        </ul>
-    </div>
 
     <div class="form">
         <form>

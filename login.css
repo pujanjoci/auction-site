@@ -1,11 +1,12 @@
 .login-container {
     margin: auto;
-    width: 20%;
+    width: 15%;
     text-align: center;
     margin-top: 10%;
     padding: 20px;
-    border: 2px solid black;
-    border-radius: 35px;
+    border: 2px solid rgba(51, 133, 0, 0.178);
+    border-radius: 45px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.522);
 }
 
 h2 {
@@ -23,8 +24,8 @@ input[type="password"] {
     width: 90%;
     padding: 10px;
     margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid gray;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.444);
 }
 
 .input-field {
@@ -70,7 +71,7 @@ input[type="password"] {
 }
 .remember {
     display: flex;
-    margin: 1px 0 1px 0;
+    margin: 5px 0px 7px 0px;
     color: #000;
 }
 
@@ -85,9 +86,44 @@ input[type="submit"] {
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
-    margin-top: 8px;
+    margin-top: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #25863a93;
+}
+
+input[type="submit"]:active {
+    background-color: #1f5f298c;
+    animation: shakeAndShrink 0.5s ease-in-out;
+    /* Apply the animation on click */
+}
+
+@keyframes shakeAndShrink {
+
+    0%,
+    100% {
+        transform: scale(1);
+        /* Start and end with normal size */
+    }
+
+    25% {
+        transform: scale(0.85) translateX(-2px);
+        /* Shrink and move left */
+    }
+
+    50% {
+        transform: scale(1.05) translateY(-5px);
+        /* Enlarge and move up */
+    }
+
+    75% {
+        transform: scale(0.95) translateX(2px);
+        /* Shrink and move right */
+    }
 }
 
 .forgot {
@@ -101,5 +137,5 @@ input[type="submit"] {
     text-decoration: none;
     color: #000;
     font-size: 16px;
-    margin-top: 12px;
+    margin-top: 15px;
 }

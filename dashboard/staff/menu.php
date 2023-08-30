@@ -1,6 +1,6 @@
 <div class="side-panel">
     <div class="logo-container">
-        <div class="logo-circle" style="background-image: url(&quot;logo.png&quot;);"></div>    
+        <div class="logo-circle" style="background-image: url(&quot;logo.png&quot;);"></div>
         <h4>Auction House</h4>
     </div>
     <div class="side-panel-box">
@@ -10,10 +10,10 @@
         <h3><i class="fas fa-envelope"></i><a href="contact.php">Contact Us</a></h3>
     </div>
     <div class="side-panel-box">
-        <h3><i class="fas fa-check-circle"></i><a href="sold.html">Sold Items</a></h3>
+        <h3><i class="fas fa-check-circle"></i><a href="sold.php">Sold Items</a></h3>
     </div>
     <div class="side-panel-box">
-        <h3><i class="fas fa-hourglass-end"></i><a href="expired.html">Expired Items</a></h3>
+        <h3><i class="fas fa-hourglass-end"></i><a href="expired.php">Expired Items</a></h3>
     </div>
     <div class="side-panel-box">
         <h3><i class="fas fa-plus"></i><a href="additems.php">Add Items</a></h3>

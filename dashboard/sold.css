@@ -1,0 +1,63 @@
+/* Reset some default browser styles */
+body,
+h2,
+table {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    /* Adjusted for the side panel width */
+}
+
+h2 {
+    background-color: #7e3c3c93;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    margin-left: 13.4%;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+table {
+    width: 69%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 5px 100px rgba(0, 0, 0, 0.1);
+    margin-left: 20%;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+}
+
+table th,
+table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #f5f5f5;
+}
+
+        button[type="submit"] {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        button[type="submit"]:hover {
+            background-color: #8c1723;
+        }

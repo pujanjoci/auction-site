@@ -1,6 +1,6 @@
 .side-panel {
     width: 11%;
-    height: 95vh;
+    height: 100vh;
     background-color: #05192484;
     color: #fff;
     padding: 20px;
@@ -13,7 +13,6 @@
 
 .logo-container {
     text-align: center;
-    margin-bottom: -1px;
 }
 
 .logo-circle {
@@ -35,7 +34,9 @@
 
 .logo-container h4 {
     margin-top: 10px;
-    font-size: 12px;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
 }
 
 .logo-circle:hover {
@@ -43,7 +44,6 @@
 }
 
 .side-panel-box {
-    margin-bottom: 5px;
     padding: 1px;
     text-align: left;
     background-color: #b0b0b000;
@@ -66,20 +66,17 @@
 
 .side-panel-box h3 i {
     font-size: 10px;
-    /* Adjust this value to change the icon size */
 }
 
 .bottom-box {
     position: relative;
     align-self: fixed;
-    margin-top: auto;
+    margin-top: 165%;
     margin-left: 25%;
 }
 
 .bottom-box h3 i {
     font-size: 10px;
-    /* Adjust this value to change the icon size */
-    margin-left: auto;
 }
 
 .bottom-box h3 a {
@@ -110,25 +107,26 @@
     margin-bottom: 20px;
 }
 
-.search-box {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    padding: 3px;
-    margin-left: auto;
-}
-
-.search-box input[type="text"] {
-    flex: 1;
+.search-input-container {
+    position: relative;
+    display: inline-block;
     border: none;
-    outline: none;
-    padding: 3px;
-    font-size: 12px;
+    width: 1px;
 }
 
-.search-box i {
-    margin-left: 5px;
+#search-bar {
+    border: none;
+    padding: 8px 28px 8px 10px;
+    border-radius: 20px;
+    background-color: #f0f0f0;
+
+    width: 100px;
+}
+
+#search-bar:focus {
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .profile-circle {
@@ -206,15 +204,85 @@ h2 {
 
 .bid-button {
     margin-top: 10px;
-    background-color: #4CAF50;
+    background-color: #35933a;
     color: white;
     padding: 8px 16px;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
     cursor: pointer;
     align-items: center;
 }
 
 .bid-button:hover {
-    background-color: #459749;
+    background-color: #355a37;
+}
+
+.bid-button:active {
+    background-color: #2e447e8c;
+    animation: shakeAndShrink 0.5s ease-in-out;
+}
+
+@keyframes shakeAndShrink {
+
+    0%,
+    100% {
+        transform: scale(1);
+        /* Start and end with normal size */
+    }
+
+    25% {
+        transform: scale(0.85) translateX(-5px);
+        /* Shrink and move left */
+    }
+
+    50% {
+        transform: scale(1.05) translateY(-5px);
+        /* Enlarge and move up */
+    }
+
+    75% {
+        transform: scale(0.95) translateX(1px);
+        /* Shrink and move right */
+    }
+}
+
+.search-box i {
+    color: #ccc;
+    font-size: 14px;
+    position: absolute;
+    top: 22px;
+    right: 45px;
+}
+
+.search-box i:hover {
+    color: #626262b8;
+}
+
+.search-box i:active {
+    color: #272727b8;
+    animation: shakeAndShrink 0.5s ease-in-out;
+}
+
+@keyframes shakeAndShrink {
+
+    0%,
+    100% {
+        transform: scale(1);
+        /* Start and end with normal size */
+    }
+
+    25% {
+        transform: scale(0.65);
+        /* Shrink and move left */
+    }
+
+    50% {
+        transform: scale(0.75);
+        /* Enlarge and move up */
+    }
+
+    75% {
+        transform: scale(0.95);
+        /* Shrink and move right */
+    }
 }

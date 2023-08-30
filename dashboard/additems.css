@@ -1,10 +1,11 @@
 /* additems.css */
 
 .content {
+    position: relative;
+    top: 4%;
     margin-left: 35%;
     width: 70%;
     max-width: 400px;
-    margin-top: -9px;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.453);

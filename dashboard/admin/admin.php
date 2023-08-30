@@ -53,12 +53,18 @@ if ($result->num_rows > 0) {
 
     <?php include "details.php"; ?>
 
+    <?php include "../process_expired_items.php"; ?>
+
+    <?php include "../process_sold.php"; ?>
+
     <script>
         setInterval(function() {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
+                    console.log("Response content:", this.responseText);
                     var response = JSON.parse(this.responseText);
+
                     if (!response.loggedin) {
                         window.location.href = "../../login.html";
                     }
@@ -67,6 +73,32 @@ if ($result->num_rows > 0) {
             xhttp.open("GET", "check_session.php", true);
             xhttp.send();
         }, 5000);
+
+        var xhttpSecond = new XMLHttpRequest();
+        xhttpSecond.onreadystatechange = function() {
+            if (xhttpSecond.readyState === 4) { // Only proceed if the request is complete
+                if (xhttpSecond.status === 200) { // Check if the response status is OK
+                    var responseJSON = xhttpSecond.responseText;
+
+                    try {
+                        var parsedData = JSON.parse(responseJSON); // Attempt to parse the JSON
+
+                        // Successfully parsed the JSON, you can use parsedData here
+
+                    } catch (error) {
+                        console.error("Error parsing JSON:", error);
+                        // Handle the error appropriately, e.g., display an error message to the user
+                    }
+
+                } else {
+                    console.error("HTTP Request Error:", xhttpSecond.status);
+                    // Handle the error appropriately, e.g., display an error message to the user
+                }
+            }
+        };
+        setTimeout(function() {
+            location.reload();
+        }, 30000);
     </script>
 </body>
 

@@ -52,10 +52,6 @@
 
             <input type="submit" name="submit" value="Login">
 
-            <div class="forgot">
-                <a href="#">Forgot password?</a>
-            </div>
-
             <div class="noaccount">
                 <a href="register.html">Don't have an account?</a>
             </div>
@@ -90,6 +86,44 @@
                 capsLockStatus.textContent = "";
             }
         });
+
+       // Function to set the session token (simplified)
+        function setSessionToken(username) {
+            sessionStorage.setItem('rememberedUser', username);
+        }
+
+        // Function to get the session token (simplified)
+        function getSessionToken() {
+            return sessionStorage.getItem('rememberedUser');
+        }
+
+        // Check if the user was remembered and populate the login form
+        window.onload = function() {
+            const rememberedUser = getSessionToken();
+            if (rememberedUser) {
+                document.getElementById('username').value = rememberedUser;
+            }
+        };
+
+        // Simulating a login action
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const rememberMeCheckbox = document.getElementById('formCheck');
+
+            // Log in the user (simplified)
+            // Here, you would typically perform server-side authentication
+
+            if (rememberMeCheckbox.checked) {
+                setSessionToken(username);
+            } else {
+                sessionStorage.removeItem('rememberedUser');
+            }
+
+            // Proceed with further actions, such as redirecting the user
+        });
+
     </script>
 </body>
 
