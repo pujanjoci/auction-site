@@ -77,7 +77,6 @@
         button:active {
             background-color: #2e447e8c;
             animation: shakeAndShrink 0.5s ease-in-out;
-            /* Apply the animation on click */
         }
 
         @keyframes shakeAndShrink {
@@ -85,22 +84,18 @@
             0%,
             100% {
                 transform: scale(1);
-                /* Start and end with normal size */
             }
 
             25% {
                 transform: scale(0.85) translateX(-5px);
-                /* Shrink and move left */
             }
 
             50% {
                 transform: scale(1.05) translateY(-5px);
-                /* Enlarge and move up */
             }
 
             75% {
                 transform: scale(0.95) translateX(1px);
-                /* Shrink and move right */
             }
         }
 
@@ -185,7 +180,6 @@
     </div>
 
 <script>
-    // Function to toggle password visibility
     function togglePasswordVisibility() {
         var passwordField = document.getElementById("password");
         var toggleIcon = document.querySelector(".toggle-password");
@@ -201,7 +195,6 @@
         }
     }
 
-    // Initial setup
     var passwordField = document.getElementById("password");
     var toggleIcon = document.querySelector(".toggle-password");
 
@@ -209,9 +202,6 @@
     toggleIcon.classList.remove("fa-eye");
     toggleIcon.classList.add("fa-eye-slash");
 
-
-
-    // Remove the error message if the page is reloaded
     window.onload = function () {
         var existingErrorMessage = document.querySelector(".message");
         if (existingErrorMessage) {
@@ -219,12 +209,10 @@
         }
     }
 
-    // Check if the URL parameter indicates redirection from register.php
     var urlParams = new URLSearchParams(window.location.search);
     var isRedirectedFromRegister = urlParams.get("redirected") === "true";
 
     if (isRedirectedFromRegister) {
-        // Alert for redirection from register.php
         alert("Username or Email already exists");
     }
 </script>
