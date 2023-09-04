@@ -7,7 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Playfair+Display:ital@1&display=swap"
+        rel="stylesheet">
     <title>Registration Page</title>
     <style>
         body {
@@ -172,33 +173,14 @@
         </div>
     </div>
 
-    <!-- Include error messages from error.php only when needed -->
+        <!-- Include error messages from error.php only when needed -->
     <?php
-    if (isset($_GET["error"])) {
-        include("error.php");
-    }
-    ?>
+        if (isset($_GET["error"])) {
+            include("error.php");
+        }
+        ?>
 
     <script>
-        // Check if the page was loaded from a redirect with an error parameter
-        if (window.location.search.includes('error=registrationerror')) {
-            // Remove the error parameter from the URL
-            var newUrl = window.location.href.replace('?error=registrationerror', '');
-
-            // Replace the current URL without the error parameter
-            window.history.replaceState({}, document.title, newUrl);
-        }
-
-        // Check if the page was loaded from a redirect with an error parameter
-        if (window.location.search.includes('error=useremailerror')) {
-            // Remove the error parameter from the URL
-            var newUrl = window.location.href.replace('?error=useremailerror', '');
-
-            // Replace the current URL without the error parameter
-            window.history.replaceState({}, document.title, newUrl);
-        }
-
-
         function togglePasswordVisibility() {
             var passwordField = document.getElementById("password");
             var toggleIcon = document.querySelector(".toggle-password");
@@ -221,7 +203,7 @@
         toggleIcon.classList.remove("fa-eye");
         toggleIcon.classList.add("fa-eye-slash");
 
-        window.onload = function() {
+        window.onload = function () {
             var existingErrorMessage = document.querySelector(".message");
             if (existingErrorMessage) {
                 existingErrorMessage.remove();

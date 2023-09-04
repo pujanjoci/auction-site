@@ -1,0 +1,104 @@
+ .talk {
+     position: relative;
+     font-size: 30px;
+     top: 5%;
+     left: 18%;
+     font-family: 'Mali', cursive;
+     font-size: 20px;
+ }
+
+ .para {
+     position: relative;
+     line-height: 25px;
+     top: 2%;
+     left: 18%;
+     font-family: 'Neucha', cursive;
+     width: 450px;
+    background-color: #fff;
+    padding: 2px;
+ }
+
+ .form {
+     position: absolute;
+     top: 25%;
+     right: 13%;
+     width: 30%;
+     padding: 1%;
+     background-color: #fff;
+     border-radius: 5%;
+     background-color: #00000057;
+ }
+
+ .form h2 {
+     font-size: 30px;
+     color: #333;
+     font-weight: 500;
+     position: relative;
+     left: 33%;
+ }
+
+ .form .inputbox {
+     position: relative;
+     width: 100%;
+     margin-top: 10px;
+ }
+
+ .form .inputbox input,
+ .form .inputbox textarea {
+     width: 100%;
+     padding: 5px 0;
+     font-size: 16px;
+     margin: 10px 0;
+     border: none;
+     border-bottom: 1px solid #333;
+     outline: none;
+     resize: none;
+     background-color: #00000001;
+ }
+
+ .form .inputbox span {
+     position: absolute;
+     left: 0;
+     padding: 5px 0;
+     font-size: 20px;
+     margin: 10px 0;
+     pointer-events: none;
+     transition: 0.5s;
+     color: #666;
+ }
+
+ .form .inputbox input:focus~span,
+ .form .inputbox input:valid~span,
+.form .inputbox textarea:focus~span#messages,
+.form .inputbox textarea:valid~span#messages {
+    color: #e91e63;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+
+ .form .inputbox input[type="submit"] {
+     width: 100px;
+     background: #00bcd4;
+     color: #fff;
+     border: none;
+     cursor: pointer;
+     padding: 10px;
+     font-size: 18px;
+     border-radius: 15px;
+     position: relative;
+     left: 40%;
+ }
+
+    .form .inputbox input[type="submit"]:hover {
+        background: #00606ca1;
+        color: #fff;
+    }
+ #description-counter {
+     position: absolute;
+     bottom: 0;
+     right: 0;
+     margin-bottom: 10px;
+     margin-right: 5px;
+     font-size: 12px;
+     color: #e91e63;
+ }

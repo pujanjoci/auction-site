@@ -31,13 +31,10 @@ function checkUserRoleAndIncludeMenu($role)
     // Check the user's role and include the appropriate menu file
     switch ($role) {
         case "admin":
-            include "admin/menu.php";
+            include "../admin/menu.php";
             break;
         case "staff":
-            include "staff/menu.php";
-            break;
-        case "user":
-            include "user/menu.php";
+            include "../staff/menu.php";
             break;
         default:
             // Handle invalid or unknown roles

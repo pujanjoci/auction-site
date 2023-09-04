@@ -1,5 +1,5 @@
 .side-panel {
-    width: 11%;
+    width: 12%;
     height: 100vh;
     background-color: #05192484;
     color: #fff;
@@ -44,7 +44,6 @@
 }
 
 .side-panel-box {
-    padding: 1px;
     text-align: left;
     background-color: #b0b0b000;
     border-radius: 35%;

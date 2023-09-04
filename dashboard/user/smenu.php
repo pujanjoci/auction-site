@@ -4,14 +4,13 @@
          <h4>Rachit Auction</h4>
      </div>
      <div class="side-panel-box">
-         <h3><i class="fas fa-tachometer-alt"></i><a href="admin.php">Dashboard</a></h3>
+         <h3><i class="fas fa-tachometer-alt"></i><a href="user-mode.php">Dashboard</a></h3>
      </div>
      <div class="side-panel-box">
-         <h3><i class="fas fa-envelope"></i><a href="../contact.php">Contact Us</a></h3>
+         <h3><i class="fas fa-envelope"></i><a href="../non-powers/contact.php">Contact Us</a></h3>
      </div>
-     <div class="side-panel-box">
-         <h3><i class="fas fa-check-circle"></i><a href="../sold.php">Sold Items</a></h3>
-     </div>
+
+
      <div class="bottom-box">
          <h3><a href="../../logout.html">Logout</a><i class="fas fa-sign-out-alt"></i></h3>
      </div>

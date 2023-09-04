@@ -9,6 +9,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 // Include the config.php file for database connection
 require_once "config.php";
 
+include 'userchecker.php';
+
 // Get the session username
 $username = $_SESSION["username"];
 
@@ -53,9 +55,9 @@ if ($result->num_rows > 0) {
 
     <?php include "details.php"; ?>
 
-    <?php include "../process_expired_items.php"; ?>
+    <?php include "../powers/process_expired_items.php"; ?>
 
-    <?php include "../process_sold.php"; ?>
+    <?php include "../powers/process_sold.php"; ?>
 
     <script>
         setInterval(function() {

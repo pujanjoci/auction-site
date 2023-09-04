@@ -7,16 +7,16 @@
         <h3><i class="fas fa-tachometer-alt"></i><a href="admin.php">Dashboard</a></h3>
     </div>
     <div class="side-panel-box">
-        <h3><i class="fas fa-envelope"></i><a href="../contact.php">Contact Us</a></h3>
+        <h3><i class="fas fa-envelope"></i><a href="../powers/contact.php">Contact Us</a></h3>
     </div>
     <div class="side-panel-box">
-        <h3><i class="fas fa-check-circle"></i><a href="../sold.php">Sold Items</a></h3>
+        <h3><i class="fas fa-check-circle"></i><a href="../powers/sold.php">Sold Items</a></h3>
     </div>
     <div class="side-panel-box">
-        <h3><i class="fas fa-hourglass-end"></i><a href="../expired.php">Expired Items</a></h3>
+        <h3><i class="fas fa-hourglass-end"></i><a href="../powers/expired.php">Expired Items</a></h3>
     </div>
     <div class="side-panel-box">
-        <h3><i class="fas fa-plus"></i><a href="../additems.php">Add Items</a></h3>
+        <h3><i class="fas fa-plus"></i><a href="../powers/additems.php">Add Items</a></h3>
     </div>
     <div class="bottom-box">
         <h3><a href="../../logout.html">Logout</a><i class="fas fa-sign-out-alt"></i></h3>

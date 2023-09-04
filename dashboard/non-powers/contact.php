@@ -26,24 +26,9 @@ mysqli_stmt_close($stmt);
 // Store the user_id in the session
 $_SESSION['user_id'] = $user_id;
 
-function checkUserRoleAndIncludeMenu($role)
-{
-    // Check the user's role and include the appropriate menu file
-    switch ($role) {
-        case "admin":
-            include "admin/menu.php";
-            break;
-        case "staff":
-            include "staff/menu.php";
-            break;
-        case "user":
-            include "user/menu.php";
-            break;
-        default:
-            // Handle invalid or unknown roles
-            return false;
-    }
-}
+
+include "../user/menu.php";
+
 
 // Retrieve the user's role from the database based on their user ID
 $userId = $_SESSION['user_id'] ?? null; // Assuming you have a user ID stored in a session variable
@@ -55,21 +40,8 @@ if ($userId) {
     $stmt->execute();
     $stmt->bind_result($role);
 
-    // Check if the query returned a result
-    if ($stmt->fetch()) {
-        // User's role found, include the menu based on the role
-        checkUserRoleAndIncludeMenu($role);
-    } else {
-        // User ID not found, handle the error appropriately
-        // For example, redirect to an error page or display an error message
-        echo "Error: User ID not found.";
-    }
-
-    // Close the statement
     $stmt->close();
 } else {
-    // User ID not found, handle the error appropriately
-    // For example, redirect to an error page or display an error message
     echo "Error: User ID not found.";
 }
 ?>

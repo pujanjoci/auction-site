@@ -4,8 +4,10 @@ session_start();
 
 // Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
-    // Redirect the user to the login page or handle the case when the user is not logged in
-    // ...
+    if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+        header("Location: ../../login.html");
+        exit;
+    }
 }
 
 // Include the configuration file
@@ -56,7 +58,6 @@ if ($resultMaxIncrement->num_rows > 0) {
         echo "<script>alert('$error_message'); window.location.href = 'process.php?item_id=$item_id';</script>";
         exit();
     }
-
 }
 
 // Prepare the query to insert the bid into the biddingincrement table

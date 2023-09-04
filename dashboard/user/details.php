@@ -7,6 +7,9 @@ function storeSessionData($itemId, $userId)
     $_SESSION['user_id'] = $userId;
 }
 
+// Retrieve user_id from the URL
+$user_id = isset($_GET['user_id']) ? $_GET['user_id'] : null;
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $itemId = $_POST['item_id'];
     $userId = $_POST['user_id'];
@@ -34,7 +37,28 @@ if (!empty($search)) {
 }
 
 $result = $con->query($query);
+if (!$result) {
+    die("Query failed: " . $con->error);
+}
+
+// Check if user_id is valid and retrieve username
+if ($user_id !== null) {
+    $user_id = mysqli_real_escape_string($con, $user_id);
+    $usernameQuery = "SELECT username FROM users WHERE id = '$user_id'";
+    $usernameResult = $con->query($usernameQuery);
+
+    if ($usernameResult && $usernameResult->num_rows > 0) {
+        $row = $usernameResult->fetch_assoc();
+        $username = $row['username'];
+        // Style the username with center alignment
+        echo '<div style="text-align: center;">Username: ' . $username . '</div>';
+    } else {
+        echo "User not found";
+    }
+}
 ?>
+
+
 
 <!DOCTYPE html>
 <html>

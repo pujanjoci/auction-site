@@ -16,21 +16,19 @@ function getHighestIncrementValue($con, $item_id)
 // Function to move data from biddingincrement to biddinghistory
 function moveToBiddingHistory($con, $item_id, $user_id, $bid_amount, $created_at)
 {
-    $sql = "INSERT INTO biddinghistory (item_id, user_id, bid_amount, created_at) VALUES (:item_id, :user_id, :bid_amount, :created_at)";
+    $sql = "INSERT INTO biddinghistory (item_id, user_id, bid_amount, created_at) VALUES (?, ?, ?, ?)";
     $stmt = $con->prepare($sql);
-    $stmt->bindParam(':item_id', $item_id, PDO::PARAM_INT);
-    $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
-    $stmt->bindParam(':bid_amount', $bid_amount, PDO::PARAM_INT);
-    $stmt->bindParam(':created_at', $created_at, PDO::PARAM_STR);
+    $stmt->bind_param("iiis", $item_id, $user_id, $bid_amount, $created_at);
     $stmt->execute();
 }
+
 
 // Function to delete data from biddingincrement
 function deleteFromBiddingIncrement($con, $item_id)
 {
-    $sql = "DELETE FROM biddingincrement WHERE item_id = :item_id";
+    $sql = "DELETE FROM biddingincrement WHERE item_id = ?";
     $stmt = $con->prepare($sql);
-    $stmt->bindParam(':item_id', $item_id, PDO::PARAM_INT);
+    $stmt->bind_param("i", $item_id);
     $stmt->execute();
 }
 

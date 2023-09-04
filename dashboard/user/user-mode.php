@@ -9,6 +9,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 // Include the config.php file for database connection
 require_once "config.php";
 
+include 'userchecker.php';
+
 // Get the session username
 $username = $_SESSION["username"];
 

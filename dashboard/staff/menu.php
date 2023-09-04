@@ -23,13 +23,6 @@
     </div>
 </div>
 
-<div class="navbar">
-    <div class="search-box">
-        <input type="text" placeholder="Search...">
-        <i class="fas fa-search"></i>
-    </div>
-    <div class="profile-circle"></div>
-</div>
 
 <link rel="stylesheet" type="text/css" href="smenu.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-w5Z4jf4Gf6BJrRmcJyIOhwG8fg9ZbeixBr+9g2eOjOqsxgEMf8P+vnjaF/wmzSsbY+2LisZ8u+M6DlX3TCIS0A==" crossorigin="anonymous" referrerpolicy="no-referrer" />

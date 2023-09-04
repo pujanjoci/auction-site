@@ -1,17 +1,15 @@
 <?php
+
+// Function to check user role and redirect accordingly
 function checkUserRoleAndRedirect($role, $con)
 {
     $sanitizedRole = mysqli_real_escape_string($con, $role);
 
-    // Prepare a SQL statement to check the role
-    $query = "SELECT role FROM users WHERE role = ?";
-    $stmt = $con->prepare($query);
-    $stmt->bind_param("s", $sanitizedRole);
-    $stmt->execute();
-    $stmt->store_result();
+    $query = "SELECT role FROM users WHERE role = '$sanitizedRole'";
+    $result = mysqli_query($con, $query);
 
-    // Check if the query was successful
-    if ($stmt->num_rows > 0) {
+    if ($result && mysqli_num_rows($result) > 0) {
+        // Redirect the user based on their role
         switch ($sanitizedRole) {
             case "admin":
                 header("Location: dashboard/admin/admin.php");
@@ -29,7 +27,4 @@ function checkUserRoleAndRedirect($role, $con)
         echo "Invalid role or database error.";
         return false;
     }
-
-    // Close the statement
-    $stmt->close();
 }

@@ -1,0 +1,15 @@
+{
+    "name": "pujan-joshi/auction-test",
+    "description": "It is about an auction site",
+    "type": "project",
+    "license": "No License",
+    "authors": [
+        {
+            "name": "pujanjoshi"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "phpmailer/phpmailer": "^6.5"
+    }
+}
