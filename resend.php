@@ -40,15 +40,15 @@ if (isset($_GET['email'])) {
 
             // SMTP configuration for Gmail
             $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com';
+            $mail->Host = 'smtp.mail.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'Your@mail.com';
-            $mail->Password = 'Your_App_Password';
+            $mail->Username = 'Your@mail.com';//Change the mail
+            $mail->Password = 'Your_App_Password';//Your Gmail App Password 
             $mail->SMTPSecure = 'tls';
-            $mail->Port = 587;
+            $mail->Port = '587';
 
             // Email content
-            $mail->setFrom('rachitauction@gmail.com', 'Rachit Auction');
+            $mail->setFrom('Your@mail.com', 'Auction House');//Change the mail
             $mail->addAddress($email);
             $mail->Subject = 'Verification Code';
             $mail->Body = "Your verification code is: $verificationCode";
