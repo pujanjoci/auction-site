@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 // SMTP configuration for Gmail
                 $mail->isSMTP();
-                $mail->Host = 'smtp.gmail.com';
+                $mail->Host = 'smtp.mail.com';
                 $mail->SMTPAuth = true;
                 $mail->Username = 'Your@mail.com';
                 $mail->Password = 'Your_App_Password';
@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $mail->Port = 587;
 
                 // Email content
-                $mail->setFrom('rachitauction@gmail.com', 'Rachit Auction');
+                $mail->setFrom('Your@mail.com', 'Auction');//Change the mail
                 $mail->addAddress($email);
                 $mail->Subject = 'Verification Code';
                 $mail->Body = "Your verification code is: $verificationCode";
