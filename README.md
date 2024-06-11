@@ -26,7 +26,4 @@ Start your web server and navigate to the project's URL to access the system.
 Authorizations and Changes
 For any major changes or customizations to the Auction House System, please contact the project owner to discuss and authorize these modifications. We want to ensure that changes are made in a way that maintains the integrity and security of the system.
 
-License
-This project is not-licensed under the MIT License
-
 Thank you for choosing the Auction House System. We hope it serves your auction house business effectively and efficiently.
